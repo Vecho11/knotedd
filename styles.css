@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.utility-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    margin: 0px 8px;
+}
+
+.main-text{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.plus-btn{
+    padding: 0.50rem 1rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: black;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    font-size: 18px;
+}
+
+.modal{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000
+}
+
+.modal-container{
+    background-color: rgb(74, 68, 68);
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+#input{
+    font-size: 18px;
+    padding: 5px 5px;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 400px;
+    width: 100%;
+    gap: 15px;
+    
+}
+
+
+#form button{
+    padding: .50rem;
+    border: 1px solid rgb(224, 219, 219);
+    border-radius: 3px;
+    outline: none;
+    font-size: .875rem;
+    color: rgb(73, 66, 66);
+    width: 100%;
+    max-width: 300px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cancel-container{
+    padding: .50rem;
+    border-radius: 3px;
+    font-size: .875rem;
+    color: rgb(73, 66, 66);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel-container button{
+    padding: .50rem;
+    border: 1px solid rgb(224, 219, 219);
+    border-radius: 3px;
+    outline: none;
+    font-size: .875rem;
+    color: rgb(73, 66, 66);
+    width: 100%;
+    max-width: 300px;
+     font-size: 18px;
+    font-weight: bold;
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 7px 15px;
+    margin-top: 8px;
+}
+
+#data-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#note-container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 200px;
+    background-color: red;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+    word-break: break-all;
+}
+
+.note-text-container p{
+    font-size: 20px;
+}
+
+.note-button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-text{
+    font-size: 18px;
+}
+
+.edit-button{
+    padding: 0rem 0.50rem;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+.delete-button{
+    padding: 0.50rem 0rem;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+}
+
+@media (min-width: 768px) {
+#data-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+}
+}
+
+@media(min-width: 992px){
+    #data-container{
+    grid-template-columns: repeat(3, 1fr)
+}
+}
+
+@media (min-width: 1200px) {
+  #data-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
