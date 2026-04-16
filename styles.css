@@ -80,7 +80,6 @@
     max-width: 400px;
     width: 100%;
     gap: 15px;
-    
 }
 
 
@@ -192,11 +191,43 @@
     #data-container{
     grid-template-columns: repeat(3, 1fr)
 }
+.modal-container{
+    max-width: 450px;
+}
+
+#input{
+    max-width: 350px;
+}
+
+#form button{
+    max-width: 350px;
+}
+
+.cancel-container button{
+    max-width: 350px;   
+}
+
 }
 
 @media (min-width: 1200px) {
   #data-container {
     grid-template-columns: repeat(4, 1fr);
   }
+  
+.modal-container{
+    max-width: 450px;
 }
 
+#input{
+    max-width: 350px;
+}
+
+#form button{
+    max-width: 350px;
+}
+
+.cancel-container button{
+    max-width: 350px;   
+}
+
+}

@@ -88,10 +88,7 @@ dataContainer.addEventListener('click', (e) => {
 
 function editNote(id){
     const data = notes.find(n => n.id === id)
-    if(!data || input.value === "") {
-        form.reset()
-        return
-    };
+    if(!data) return;
 
     input.value = data.note
     editingId = id
