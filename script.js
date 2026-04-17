@@ -5,6 +5,7 @@ const addButton = document.getElementById("add-btn")
 const plusButton = document.querySelector(".plus-btn")
 const cancelButton = document.querySelector(".cancel-btn")
 const modal = document.querySelector(".modal")
+const toggleBtn = document.getElementById('toggle-btn')
 
 let notes = []
 let editingId = null
@@ -45,6 +46,10 @@ function addNote(){
 }
 
 function renderNotes(){
+
+    if(notes.length === 0){
+       return dataContainer.innerHTML = `<p class="empty-text">I left this space open… just in case you come back to it.</p>`
+    } else{
     dataContainer.innerHTML = notes.map(n => {
         return  `
             <div id="note-container" style="background-color:${n.bg}">
@@ -66,8 +71,10 @@ function renderNotes(){
                 </div>
             </div>
         `
-    }).join("")
+        }).join("")
+    }
 }
+
 
 dataContainer.addEventListener('click', (e) => {
     e.preventDefault()
@@ -138,4 +145,24 @@ cancelButton.addEventListener("click", (e) =>{
 })  
 
 
-    
+function updateBackground(isDark){
+    document.body.classList.toggle("toggle-dark", isDark)
+
+    toggleBtn.innerHTML = isDark 
+    ? `<i class="fa-solid fa-sun"></i>`
+    : `<i class="fa-solid fa-moon"></i>`
+}
+
+toggleBtn.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("toggle-dark")
+    localStorage.setItem('theme', isDark ? "dark" : "light")
+
+    updateBackground(isDark)
+})
+
+window.addEventListener("DOMContentLoaded", () => {
+    const saveTheme = localStorage.getItem('theme');
+    isDark = saveTheme === 'dark'
+
+    updateBackground(isDark)
+})

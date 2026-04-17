@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
 .hidden{
     display: none !important;
 }
@@ -13,13 +17,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 24px;
+    padding: 18px 10px;
     margin: 0px 8px;
 }
 
+.toggle-container{
+    display: flex;
+    gap: 8px;
+}
+
 .main-text{
-    font-size: 36px;
+    font-size: 32px;
     font-weight: bold;
+    color: #5d56e7;
+    margin-right: 5px;
 }
 
 .plus-btn{
@@ -27,12 +38,26 @@
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    background: black;
-    color: #fff;
+    background-color: #5d56e7;
+    color: black;
     cursor: pointer;
     font-weight: bold;
     border: none;
     font-size: 18px;
+}
+
+#toggle-btn{
+    padding: 0.50rem 1rem;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #5d56e7;
+    color: black;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    font-size: 18px;
+
 }
 
 .modal{
@@ -119,6 +144,10 @@
     max-width: 300px;
      font-size: 18px;
     font-weight: bold;
+}
+
+.toggle-dark{
+    background-color: black;
 }
 
 .main-container{
@@ -230,4 +259,8 @@
     max-width: 350px;   
 }
 
+}
+
+.empty-text{
+    color: rgb(115, 111, 111);
 }
