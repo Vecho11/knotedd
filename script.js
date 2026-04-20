@@ -6,6 +6,7 @@ const plusButton = document.querySelector(".plus-btn")
 const cancelButton = document.querySelector(".cancel-btn")
 const modal = document.querySelector(".modal")
 const toggleBtn = document.getElementById('toggle-btn')
+const search = document.querySelector(".search-el")
 
 let notes = []
 let editingId = null
@@ -28,8 +29,8 @@ function addNote(){
     const value = input.value.trim()
     const userInput = value
 
-    if(!userInput || !isNaN(userInput) || userInput === ""){
-        dataContainer.innerHTML = '<p>Invalid data</p>'      
+    if(userInput === ""){
+        alert('Invalid data.')    
         return;
     }
 
@@ -45,12 +46,12 @@ function addNote(){
     input.value = ""
 }
 
-function renderNotes(){
+function renderNotes(data = notes){
 
     if(notes.length === 0){
        return dataContainer.innerHTML = `<p class="empty-text">I left this space open… just in case you come back to it.</p>`
     } else{
-    dataContainer.innerHTML = notes.map(n => {
+    dataContainer.innerHTML = data.map(n => {
         return  `
             <div id="note-container" style="background-color:${n.bg}">
                 <div class="note-text-container">
@@ -101,7 +102,6 @@ function editNote(id){
     editingId = id
     modal.classList.remove('hidden')
     addButton.innerHTML = "SAVE EDIT"
-    saveData()
 }
 
 function deleteNote(id){
@@ -114,11 +114,11 @@ form.addEventListener("submit", (e) => {
     e.preventDefault()
 
     if(editingId !== null){
-        const findId= notes.find(n => n.id === editingId)
-        if(!findId) return;
+        const note = notes.find(n => n.id === editingId)
+        if(!note) return;
         
         modal.classList.add('hidden')
-        findId.note = input.value
+        note.note = input.value
         editingId = null;
         addButton.textContent = "ADD"
         saveData()
@@ -162,7 +162,23 @@ toggleBtn.addEventListener("click", () => {
 
 window.addEventListener("DOMContentLoaded", () => {
     const saveTheme = localStorage.getItem('theme');
-    isDark = saveTheme === 'dark'
+    let isDark = saveTheme === 'dark'
 
     updateBackground(isDark)
 })
+
+function SearchNotes(){
+    const value = search.value.trim().toLowerCase()
+
+    const data = notes.filter(n => {
+        return n.note.toLowerCase().includes(value)
+    })
+
+    if(data.length === 0){
+        dataContainer.innerHTML = `<p class="empty-text">No match data</p>`
+    } else{
+        renderNotes(data)
+    }
+}
+
+search.addEventListener("input", SearchNotes)

@@ -19,6 +19,7 @@ body {
     align-items: center;
     padding: 18px 10px;
     margin: 0px 8px;
+    gap: 6px;
 }
 
 .toggle-container{
@@ -165,6 +166,7 @@ body {
     align-items: center;
     justify-content: center;
     width: 100%;
+    margin-bottom: 6px;
 }
 
 #note-container{
@@ -209,11 +211,38 @@ body {
     font-size: 18px;
 }
 
+.seach-text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.search-el{
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #dad3d3
+}
+
 @media (min-width: 768px) {
 #data-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr)
 }
+.plus-btn{
+    height: 60px;
+    width: 60px;
+}
+
+#toggle-btn{
+    height: 60px;
+    width: 60px;
+}
+
+.search-el{
+    font-size: 16px;
+}
+
 }
 
 @media(min-width: 992px){
@@ -235,6 +264,20 @@ body {
 .cancel-container button{
     max-width: 350px;   
 }
+.plus-btn{
+    height: 60px;
+    width: 60px;
+}
+
+#toggle-btn{
+    height: 60px;
+    width: 60px;
+}
+
+.search-el{
+    font-size: 16px;
+}
+
 
 }
 
@@ -257,6 +300,24 @@ body {
 
 .cancel-container button{
     max-width: 350px;   
+}
+
+
+.search-el{
+    font-size: 16px;
+}
+.seach-text-container{
+    gap: 10px;
+}
+
+.plus-btn{
+    height: 65px;
+    width: 65px;
+}
+
+#toggle-btn{
+    height: 65px;
+    width: 65px;
 }
 
 }
